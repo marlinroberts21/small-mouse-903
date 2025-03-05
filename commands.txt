@@ -1,6 +1,10 @@
-docker build -f Dockerfile . -t web-server-test
+docker build -f dockerfile . -t web-server-test
 
-docker run -d -p 8000:80 --name web-server-test web-server-test
+docker run -d -it -p 8000:80 --name web-server-test web-server-test
+
+docker run -it -p 8000:80 --name web-server-test web-server-test
+
+docker run -d --rm -p 8000:80 --name web-server-test web-server-test
 
 docker stop web-server-test
 

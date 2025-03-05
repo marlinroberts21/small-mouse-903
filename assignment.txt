@@ -1,0 +1,70 @@
+Clone the repo for this assignment onto your local machine:
+
+git clone https://github.com/marlinroberts21/small-mouse-903.git
+
+Make sure your Docker Desktop is running.
+
+Open the repo in VSCode.
+
+If not already installed, search for and install the Docker extension published by Microsoft.
+
+Open the extension from the icon for it.
+
+You should see a pane for images and containers currently on your system.
+
+Build the image with the build command executed from your project directory:
+
+docker build -f dockerfile . -t web-server-test
+
+You should see a new image listed on the left named web-server-test
+
+The dockerfile specified to copy the files server.py and index.html to a directory called server in your image.
+
+Use the Docker run command to create and run a container from the image. 
+
+docker run -d -it -p 8000:80 --name web-server-test web-server-test
+
+You should see a new container called web-server-test in the docker pane on the left. It should be in a running state.
+
+The container is running, but our dockerfile did not specify to execute the server.py, so our web server is not yet running.
+
+Now we will connect to our container with VSCode.
+
+Right-click on the running container and choose Attach Visual Studio Code.
+
+A new instance of VSCode will start, opening the container in the working directory specified in the dockerfile. This should be called /server and it will contain the two files our dockerfile specified to copy. 
+
+Open a new terminal in VSCode from the Terminal menu from the top. This terminal should open on the container in the /server directory.
+
+Execute our simple server in the terminal:
+
+python3 server.py
+
+You should see:
+
+Server started http://0.0.0.0:80
+
+Now on your local machine, open: http://localhost:8000/
+
+This should show the Hello World message contained in our index.html
+
+You can stop the server from the container terminal window with CTRL^C 
+
+Submit a screenshot of your entire VSCode window showing in the bottom left-hand corner that you are connected to the container.
+
+In the bottom left-hand corner of VSCode you will see a blue message area saying you are connected to a container.
+
+Click on this blue bar and a command palet will appear at the top of VSCode.
+
+Click on Close Remote Connection. 
+
+Shut down your container with:
+
+docker stop web-server-test
+
+
+
+
+
+
+
