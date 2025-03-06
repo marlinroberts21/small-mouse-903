@@ -34,9 +34,9 @@ Now we will connect to our container with VSCode.
 
 Right-click on the running container and choose Attach Visual Studio Code.
 
-A new instance of VSCode will start, opening the container in the working directory specified in the dockerfile. This should be called /server and it will contain the two files our dockerfile specified to copy. 
+A new instance of VSCode will start, opening the container in the working directory specified in the dockerfile. This should be called /server and it will contain the two files our dockerfile specified to copy. If it does not open in the server directory with our two files, go to open folder in VSCode. If it opens the root directory, click on the .. at the top of the list. Now look for a directory called server and open that.
 
-Open a new terminal in VSCode from the Terminal menu from the top. This terminal should open on the container in the /server directory.
+Open a new terminal in VSCode from the Terminal menu from the top. This terminal should open on the container in the /server directory. 
 
 Execute our simple server in the terminal:
 
